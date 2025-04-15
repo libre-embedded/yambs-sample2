@@ -1,14 +1,59 @@
 <!--
     =====================================
     generator=datazen
-    version=3.1.3
-    hash=89454eb77747d6acac645f4493f5394c
+    version=3.2.1
+    hash=a1442ce50637a68835e65edf07da2c3c
     =====================================
 -->
 
-# yambs-sample2 ([0.2.0](https://github.com/vkottler/yambs-sample2/releases/tag/0.2.0))
+# yambs-sample2 ([0.2.1](https://github.com/libre-embedded/yambs-sample2/releases/tag/0.2.1))
 
-[![codecov](https://codecov.io/gh/vkottler/yambs-sample2/branch/master/graph/badge.svg)](https://codecov.io/gh/vkottler/yambs-sample2)
-![Build Status](https://github.com/vkottler/yambs-sample2/actions/workflows/yambs-project.yml/badge.svg)
+[![codecov](https://codecov.io/gh/libre-embedded/yambs-sample2/branch/master/graph/badge.svg)](https://codecov.io/gh/libre-embedded/yambs-sample2)
+![Build Status](https://github.com/libre-embedded/yambs-sample2/actions/workflows/yambs-project.yml/badge.svg)
 
 *For testing nested dependencies.*
+
+## Documentation
+
+### Generated
+
+* By [sphinx+breathe+exhale](https://vkottler.github.io/cpp/sphinx/yambs-sample2/)
+(What's [sphinx](https://www.sphinx-doc.org/en/master/) /
+[breathe](https://breathe.readthedocs.io/en/latest/) /
+[exhale](https://exhale.readthedocs.io/en/latest/)?)
+
+## Workflow
+
+Install [vmklib](https://github.com/libre-embedded/vmklib) such that you can
+`mk --version` (a `pip install vmklib` to your desired Python environment is
+all that's needed).
+
+From a fresh checkout:
+
+```
+git submodule update --init
+mk dz-sync
+mk g
+```
+
+This should result in fully compiled code that you can now use or add to.
+
+
+### Generating Interfaces
+
+Structs and enumerations can be defined for
+[ifgen](https://github.com/libre-embedded/ifgen) which can then generate C++ source
+code into the project.
+
+Generating configurations based on an
+[SVD](https://github.com/libre-embedded/ifgen/tree/master/ifgen/data/svd) file:
+
+```
+mk ifgen-svd-XMC4700
+```
+
+Generating code from an `ifgen.yaml` in the root directory of the project:
+
+```
+mk ifgen
+```
