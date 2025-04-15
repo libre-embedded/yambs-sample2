@@ -2,7 +2,10 @@
 name: yambs-sample2
 description: For testing nested dependencies.
 
+owner: libre-embedded
+main_branch: master
+
 version:
   major: 0
   minor: 2
-  patch: 0
+  patch: 1
