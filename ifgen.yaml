@@ -1,5 +1,5 @@
 ---
 includes:
-  - config/python/yambs/ifgen.yaml
+  - config/python/ifgen/settings.yaml
 
 namespace: [Example2]
